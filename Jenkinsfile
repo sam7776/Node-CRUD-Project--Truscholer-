@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    tools {
-        git 'Default'
-    }
     environment {
         AWS_REGION = 'ap-south-1'
         REPO_NAME = 'nodeapp'
