@@ -4,9 +4,6 @@ pipeline {
         AWS_REGION = 'ap-south-1'
         REPO_NAME = 'nodeapp'
     }
-    tools {
-        git 'Default'
-    }
     stages {
         stage('Checkout') {
             steps {
