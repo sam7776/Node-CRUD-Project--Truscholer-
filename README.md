@@ -1,1 +1,0 @@
-# Node-CRUD-Project--Truscholer-
