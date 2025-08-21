@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+        git 'Default'
+    }
     environment {
         AWS_REGION = 'ap-south-1'
         REPO_NAME = 'nodeapp'
@@ -7,7 +10,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
+                git branch: 'main', url: 'https://github.com/sam7776/node-project-truscholer.git'
             }
         }
         stage('Login ECR') {
