@@ -13,12 +13,12 @@ pipeline {
         stage('Login ECR') {
             steps {
                 withCredentials([
-                    string(credentialsId: 'aws-access', variable: 'aws-access'),
-                    string(credentialsId: 'aws-secret', variable: 'aws-secret')
+                    ([string(credentialsId: 'access-key', variable: 'access-key'),
+                    string(credentialsId: 'secret-key', variable: 'secret-key')])
                 ]) {
                     sh '''
-                    aws configure set aws_access_key_id $aws-access
-                    aws configure set aws_secret_access_key $aws-secret
+                    aws configure set aws_access_key_id $access-key
+                    aws configure set aws_secret_access_key $secret-key
                     aws configure set default.region $AWS_REGION
 
                     ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
