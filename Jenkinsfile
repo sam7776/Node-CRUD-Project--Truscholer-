@@ -5,6 +5,11 @@ pipeline {
         REPO_NAME = 'nodeapp'
     }
     stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
         stage('Login ECR') {
             steps {
                 withCredentials([
