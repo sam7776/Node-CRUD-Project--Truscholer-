@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        git 'Default'
+        git '/usr/bin/git'
     }
     environment {
         AWS_REGION = 'ap-south-1'
